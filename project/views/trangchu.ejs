@@ -1,0 +1,30 @@
+<% var n = 1000	;
+var a = "<font color=green>Green</font>"; 
+var tuoi = 18;%>
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>server</title>
+</head>
+<body>
+
+	<h1>Welcome to EJS</h1>
+
+	<!-- dấu = bảo mật -->
+	<h4><%=	n %></h4>
+
+	<!-- dấu - ko bảo mật -->
+	<h4><%-	a %></h4>
+
+	<% if( tuoi >= 18 ){%>
+			<h3>bạn đủ 18 tuổi</h3>
+		<% }else{ %>
+			<h3>bạn đủ 18 tuổi</h3>
+	<% } %>	
+
+	<% for(var i = 0 ; i <= 5 ; i++ ){%>
+			<h3>Khoa học NodeJS - <%= i %></h3>
+	<% } %>
+</body>
+</html>
