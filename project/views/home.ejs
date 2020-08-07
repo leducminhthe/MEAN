@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	<div class="menu">
+		
+		<% menu.forEach(function(cap1){ %>
+
+		<div class="cap1">
+			<%- cap1.name %>
+		</div>
+		<div >
+			<% cap1.Con.forEach(function(cap2){ %>
+			<div class="cap2">
+				<a href="/namsinh?spId=<%- cap2._id %>" title=""><%- cap2.name %></a>
+			</div>
+			<% }); %>
+		</div>
+
+		<% }); %>
+
+	</div>
+
+	<div id="wrapper">
+		<div id="cap1">
+			<form action="/themcap1" method="post" accept-charset="utf-8">
+				<input type="text" name="namcap1">
+				<input type="submit" value="submit">
+			</form>
+		</div>
+
+		<div id="cap2">
+			<form action="/themcap2" method="post" accept-charset="utf-8">
+				<select name="idcap1">
+					<% menu.forEach(function(cap1){ %>
+						<option value="<%- cap1._id %>"><%- cap1.name %></option>
+					<% }); %>
+				</select>
+				<input type="text" name="namecap2">
+				<input type="submit" value="them">
+			</form>
+		</div>
+	</div>
+</body>
+</html>

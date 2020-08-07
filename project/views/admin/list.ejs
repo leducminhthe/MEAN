@@ -1,0 +1,29 @@
+<table width="100%" border="1">
+	<tr>
+		<td width="20%">Object Id</td>
+		<td width="40%">Name</td>
+		<td width="5%">Ordering</td>
+		<td width="10%">Active</td>
+		<td width="25%">
+			<a href="/cate/add" title="">New</a>
+		</td>
+	</tr>
+
+	<% cates.forEach(function(cate){ %>
+	<tr>
+		<td><%- cate._id %></td>
+		<td><%- cate.name %></td>
+		<td><%- cate.ordering %></td>
+
+		<% if(cate.active == true){%>
+			<td>Còn hàng</td>
+		<% }else{ %>
+			<td>Tạm thời hết hàng</td>
+		<% } %>
+		<td>
+			<a href="/cate/edit/<%- cate._id %>" title="">Edit</a> - 
+			<a href="/cate/delete/<%- cate._id %>" title="">Delete</a>
+		</td>
+	</tr>
+	<% }) %>
+</table>

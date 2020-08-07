@@ -1,0 +1,28 @@
+body{
+	background: orange;
+}
+h1{
+	color: red;
+}
+h3{
+	color: white;
+}
+.menu{
+	font-size: 20px;
+}
+.cap1{
+	background: white;
+}
+.cap1, .cap2{
+	border: 1px solid green;
+	padding: 20px;
+}
+.cap2 a{
+	text-decoration: none;
+}
+#wrapper{
+	margin: 30px auto;
+}
+#cap1{
+	margin: 20px 0px;
+}

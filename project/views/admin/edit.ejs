@@ -1,0 +1,8 @@
+<h3>Edit</h3>
+<form action="/cate/edit" method="post" accept-charset="utf-8">
+	<input type="text" value="<%- cate.name %>" name="txtname" placeholder="name">
+	<input type="text" value="<%- cate.ordering %>" name="txtordering" placeholder="ordering">
+	<input type="checkbox" <% if(cate.active == true){%> checked <% } %> name="active">
+	<input type="hidden" value="<%- cate._id %>" name="CateId">
+	<input type="submit" value="Edit">
+</form>
