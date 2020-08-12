@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+
+	<script>
+	//connect server
+	var socket = io("http://localhost:3000/");
+	socket.on("server-send-data", function(data){
+		$("body").attr("bgColor" ,data);
+	})
+
+	$(document).ready(function(){
+		$("#red").click(function(){
+			socket.emit("client-send", "red");
+		})
+		$("#blue").click(function(){
+			socket.emit("client-send", "blue");
+		})
+		$("#yellow").click(function(){
+			socket.emit("client-send", "yellow");
+		})		
+	})
+	</script>
+
+	<style>
+		#red{
+			background-color: red;
+		}
+		#blue{
+			background-color: blue;
+		}
+		#yellow{
+			background-color: yellow;
+		}
+	</style>
+
+</head>
+<body>
+	<div id="red">1</div>
+	<div id="blue">2</div>
+	<div id="yellow">3</div>
+</body>
+</html>

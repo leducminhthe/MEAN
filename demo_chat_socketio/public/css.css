@@ -1,0 +1,37 @@
+#wrapper{
+	width: 1200px;
+	margin: auto;
+}
+#chatForm{
+	margin: 10px 0px;
+}
+#left{
+	width: 30%;
+	float: left;
+	background: blue;
+}
+#right{
+	width: 70%;
+	background: yellow;
+	float: right;
+}
+#boxTitle{
+	border: 1px solid black;
+	height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+#boxContent{
+	border: 1px solid black;
+	min-height: 50px;
+}
+#sayHi{
+	text-align: right;
+}
+#listMessage{
+	min-height: 100px;
+    background-color: bisque;
+}
+#txtMessage{
+	margin: 10px 0px;
+}

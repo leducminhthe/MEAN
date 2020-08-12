@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+
+	<script>
+	//connect server
+	var socket = io("http://localhost:3000/");
+	socket.on("server-send-data", function(data){
+		$("#noidung").append(data + ", ");
+	})
+
+	$(document).ready(function(){
+		$("#click").click(function(){
+			socket.emit("client-send", "Hello");
+		})
+	})
+	</script>
+
+</head>
+<body>
+	<div id="click">
+		click
+	</div>
+	<h2 id="noidung"></h2>
+</body>
+</html>

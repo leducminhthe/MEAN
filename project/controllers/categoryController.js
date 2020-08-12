@@ -2,7 +2,7 @@ const Category = require("../Models/Category");
 
 module.exports = function(app){
 	app.get("/cate/add", function(req, res){
-		res.render("MasterAdmin", {page: "add"});
+		res.render("MasterAdmin", {page: "admin/add"});
 	});
 
 	app.post("/cate/add", function(req, res){
@@ -34,7 +34,7 @@ module.exports = function(app){
 			if (err) {
 				res.json({kq:0});
 			} else {
-				res.render("MasterAdmin", {page: "list", cates:data});
+				res.render("MasterAdmin", {page: "admin/list", cates:data});
 			}
 		});
 	});
@@ -44,7 +44,7 @@ module.exports = function(app){
 			if (err) {
 				res.json({kq:0});
 			} else {
-				res.render("MasterAdmin", {page: "edit", cate:data});
+				res.render("MasterAdmin", {page: "admin/edit", cate:data});
 			}
 		});
 	});

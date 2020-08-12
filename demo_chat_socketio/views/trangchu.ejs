@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+	<link rel="stylesheet" type="text/css" href="css.css">
+	<script type="text/javascript" src="javascript.js"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<div id="loginForm">
+			<h3>WHAT'S YOUR NAME</h3>
+			<input type="text" id="txtname">
+			<input type="button" value="Register" id="btnRegister">
+		</div>
+		<div id="chatForm">
+			<div id="left">
+				<div id="boxTitle">User Online</div>
+				<div id="boxContent">...</div>
+			</div>
+			<div id="right">
+				<div id="sayHi">
+					Hello <span id="currentUser">Teo</span>
+					<input type="button" value="logout" id="btnLogout">
+				</div>
+				<div id="listMessage">
+					1
+				</div>
+				<input type="text" id="txtMessage">
+				<input type="button" name="" id="btnMessage" value="Send">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
