@@ -11,10 +11,12 @@ server.listen(3000);
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }))
 
-var mangUser = ["aaa"];
+var mangUser = [""];
 
 io.on("connection", function(socket){
 	console.log('user connection:' + socket.id);
+	//xem server có bao nhiêu room
+	console.log( socket.adapter.rooms );
 
 	socket.on("disconnect", function(){
 		console.log(socket.id + "disconnect");
@@ -27,7 +29,9 @@ io.on("connection", function(socket){
 			socket.emit("server-send-false");
 		}else{
 			mangUser.push(data);
+			socket.Username = data;
 			socket.emit("server-send-success", data);
+			io.sockets.emit('server-send-all-user', mangUser);
 		}
 
 		//TH1: server trả về hết data cho tất cả ng dùng khi chỉ 1 ng dửi lên
@@ -37,12 +41,31 @@ io.on("connection", function(socket){
 
 		//TH2: server chỉ trả về cho ng nào gửi data lên server
 		//VD: A gửi lên server, server chỉ trả về cho A
-		socket.emit("server-send-data", data + '888');
+		// socket.emit("server-send-data", data + '888');
 
 		//TH3: server trả về toàn server nhưng không trả về cho ng nào gửi data lên
 		//VD: A gửi lên, server trả về cho B,C,D ko trả về A
 		// socket.broadcast.emit("server-send-data", data + '888');
+	})
 
+	socket.on('logout',function(){
+		mangUser.splice(
+			mangUser.indexOf(socket.Username), 1
+		);
+		socket.broadcast.emit('server-send-all-user', mangUser);
+	})
+
+	socket.on('client-send-message',function(data){
+		io.sockets.emit('server-send-message', {un:socket.Username, nd:data});
+	})
+
+	socket.on('client-take-message',function(data){
+		var s = socket.Username ;
+		io.sockets.emit('server-who-take-message', s);
+	})
+
+	socket.on('client-stop-message',function(data){
+		io.sockets.emit('server-stop-message');
 	})
 });
 
