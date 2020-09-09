@@ -1,0 +1,101 @@
+<div class="card">
+    <div class="card-header">
+        <strong>Basic Form</strong> Elements
+    </div>
+    <div class="card-body card-block">
+        <form action="/page/book" method="post" class="form-horizontal" enctype="multipart/form-data">
+            <div class="row form-group">
+                <div class="col col-md-3"><label class=" form-control-label">Static</label></div>
+                <div class="col-12 col-md-9">
+                    <p class="form-control-static">BookShop</p>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="select" class=" form-control-label">Select</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <select name="selectCate" id="selectCate" class="form-control">
+                        
+                    <% cate.forEach(function(cate){ %>
+
+                        <option value="<%- cate._id %>"><%- cate.title %></option>
+
+                    <% }) %>
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col col-md-3">
+                	<label for="text-input" class=" form-control-label">Title</label>
+                </div>
+                <div class="col-12 col-md-9">
+                	<input type="text" id="txtTitle" name="txtTitle" placeholder="Title" class="form-control" required>
+                	<small class="form-text text-muted">This is a Title</small>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="text-input" class=" form-control-label">Image</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input type="file" id="fileImage" name="fileImage">
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="text-input" class=" form-control-label">Pdf url</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <input type="text" id="txtPdf" name="txtPdf" placeholder="Pdf url" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col col-md-3">
+                    <label for="text-input" class=" form-control-label">Description</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <textarea id="txtDes" name="txtDes" placeholder="Description" class="form-control" required></textarea>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col col-md-3">
+                	<label for="text-input" class=" form-control-label">Ordering</label>
+                </div>
+                <div class="col-12 col-md-9">
+                	<input type="text" id="txtOrdering" name="txtOrdering" placeholder="Ordering" class="form-control" required>
+                	<small class="help-block form-text">Please enter ordering</small>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col col-md-3">
+                	<label for="select" class=" form-control-label">Select</label>
+                </div>
+                <div class="col-12 col-md-9">
+                    <select name="select" id="select" class="form-control">
+                        <option value="1">Show</option>
+                        <option value="0">Hide</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card-footer">
+        		<button type="submit" class="btn btn-primary btn-sm">
+            		<i class="fa fa-dot-circle-o"></i> Submit
+        		</button>
+		        <button type="reset" class="btn btn-danger btn-sm">
+		            <i class="fa fa-ban"></i> Reset
+		        </button>
+    		</div>
+        </form>
+    </div>
+
+</div>
