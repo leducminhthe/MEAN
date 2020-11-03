@@ -27,5 +27,5 @@ mongoose.connect(process.env.DB_CONNECT,
         }
     });
 
-const confilg = '123';
+const confilg = 'confilg';
 
