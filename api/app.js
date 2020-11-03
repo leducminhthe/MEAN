@@ -1,4 +1,4 @@
-const express = require ('express');
+const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
@@ -17,12 +17,14 @@ app.use(express.json());
 app.use('/api/posts', postRoute);
 app.use('/api/user', userRouter);
 
-mongoose.connect(process.env.DB_CONNECT, 
-                {useNewUrlParser: true, useUnifiedTopology: true}, 
-                function(err){
-                    if (!err) {
-                        console.log('success connect');
-                    } else {
-                        console.log('false');
-                }
-});
+mongoose.connect(process.env.DB_CONNECT,
+    { useNewUrlParser: true, useUnifiedTopology: true },
+    function (err) {
+        if (!err) {
+            console.log('success connect');
+        } else {
+            console.log('false');
+        }
+    });
+
+const confilg = 'conflig';
