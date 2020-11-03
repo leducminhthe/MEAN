@@ -17,6 +17,7 @@ app.use(express.json());
 app.use('/api/posts', postRoute);
 app.use('/api/user', userRouter);
 
+<<<<<<< HEAD
 mongoose.connect(process.env.DB_CONNECT,
     { useNewUrlParser: true, useUnifiedTopology: true },
     function (err) {
@@ -28,3 +29,16 @@ mongoose.connect(process.env.DB_CONNECT,
     });
 
 const confilg = 'conflig';
+=======
+mongoose.connect(process.env.DB_CONNECT, 
+                {useNewUrlParser: true, useUnifiedTopology: true}, 
+                function(err){
+                    if (!err) {
+                        console.log('success connect');
+                    } else {
+                        console.log('false');
+                }
+});
+
+const test = '';
+>>>>>>> 0be8fe6be39d160eed7d2f2e6290183e28409561
