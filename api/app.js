@@ -26,3 +26,5 @@ mongoose.connect(process.env.DB_CONNECT,
                         console.log('false');
                 }
 });
+
+const test = '';
