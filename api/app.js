@@ -26,6 +26,6 @@ mongoose.connect(process.env.DB_CONNECT,
             console.log('false');
         }
     });
-
-const confilg = '2345';
+const test = 'test';
+const confilg = '123';
 
