@@ -29,3 +29,5 @@ mongoose.connect(process.env.DB_CONNECT,
 
 const confilg = '367';
 const name = "name";
+const test = 'test';
+
