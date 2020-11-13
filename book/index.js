@@ -141,7 +141,7 @@ app.post("/page/book", function(req, res){
             // save book
             var book = new Book({
             	title: req.body.txtTitle,
-            	image: req.file.fileImage,
+            	image: req.file.filename,
             	file: req.body.txtPdf,
             	description: req.body.txtDes,
             	ordering: req.body.txtOrdering,
