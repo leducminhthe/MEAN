@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 const cors = require('cors');
 require('dotenv/config');
-app.listen(3000);
+app.listen(4000);
 
 const postRoute = require('./routes/posts');
 const userRouter = require('./routes/user');
